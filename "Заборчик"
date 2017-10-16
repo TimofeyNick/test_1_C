@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+int main()
+{
+    std:: string s;
+    std:: getline(std::cin, s);
+    int len_1 = s.length();
+
+    int pos = 0;
+    for (int i =0, i < len_1, i++)
+    {
+        if(pos % 2 == 0)
+        {
+            char cur_symbol;
+            cur_symbol = s[pos];
+            
+        }
+        else
+        {
+            
+        }
+        symbol_number ++;
+    }
+    
+}
