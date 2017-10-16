@@ -14,17 +14,17 @@ int main()
     {
         if(pos % 2 == 0)
         {
-            cur_symbol = s[pos];
+            cur_symbol = s[i];
             if (cur_symbol >= 97 && cur_symbol <= 122){cur_symbol = cur_symbol - 32;}
             std:: cout << cur_symbol;
         }
         else
         {
-            cur_symbol = s[pos];
+            cur_symbol = s[i];
             if (cur_symbol >= 65 && cur_symbol <= 90){cur_symbol = cur_symbol +32;}
             std:: cout << cur_symbol;
         }
-        pos++;
+        if (cur_symbol > 32){pos++;}
     }
 
 }
