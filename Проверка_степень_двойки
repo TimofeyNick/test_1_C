@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+
+int main() {
+    int ans = 0;
+    int num = 0;
+    std:: cin >> num;
+    int pos = 1;
+    for(int i = 0; pos <= num; i++)
+    {
+        pos = pos * 2;
+        if (pos == num)
+        {
+            std:: cout << "YES";
+            ans = ans + 1;
+        }
+    }
+    if (ans == 0)
+    {
+        std:: cout << "NO";
+    }
+}
