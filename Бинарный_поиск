@@ -2,30 +2,27 @@
 #include <string>
 #include <ctime>
 
-int binary_search(int key, int *s, int len_1)
-{
-    int left_bound = -1;
-    int right_bound = len_1;
+int bin_search(int key, int *s, int len_1){
+
+    int left = -1;
+    int right = len_1;
     int middle = 0;
-    while (right_bound - left_bound > 1)
-    {
-        middle = (left_bound + right_bound)/2;
-        if (s[middle] > key){ right_bound = middle;}
-        else{left_bound = middle;}
+    while (right - left > 1){
+        middle = (right + left)/2;
+        if (s[middle] > key){right = middle;}
+        else{left = middle;}
     }
-    return right_bound;
+    if (left >= 0 and s[left] == key){return left;}
+    else{return "-1";}
 }
 
-int main()
-{
+int main() {
     int key = 0;
     int len_1 = 0;
-    std:: cin >> key >> len_1;
-    int s[len_1] = {};
-    for (int i = 0; i < len_1; i++){
-        std:: cin >> s[i];
-    }
+    std:: cin >> len_1 >> key;
+    int s[len_1];
+    for (int i = 0; i < len_1; i++){std:: cin >> s[i];}
 
-    int ans = binary_search(key, s, len_1);
-    std:: cout << ans;
+    int ans = bin_search(key, s, len_1);
+    std:: cout << (ans+1);
 }
