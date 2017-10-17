@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+void SortArray(int array[], const int size)
+{
+  int a = 0;
+  int b = 0;
+  for(int i = 1; i < size; i++){
+      for (int j = i; j < size; j++){
+          if (array[j] < array[i-1]){
+              a = array[j]; b = array[i-1];
+              array[j] = b; array[i-1] = a;
+          }
+      }
+  }
+}
+
+int main(){
+    return 0;
+}
