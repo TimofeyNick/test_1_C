@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+
+int main(){
+    int size = 0, str_1 = 0, str_2 = 0;
+    std :: cin >> size >> str_1;
+    int** A = new int*[size];
+        for(int i = 0; i < size; i++) {
+            A[i] = new int[size];
+            for(int j = 0; j < size; j++) {
+                std:: cin >> A[i][j];
+            }
+        }
+
+    int max_num = A[0][0];
+    for (int i = 1; i < size; i++){
+         if(A[i][i] > max_num){
+             max_num = A[i][i];
+             str_2 = i;
+         }
+     }
+
+    int tmp_1 = 0, tmp_2 = 0;
+    for(int k = 0; k < size; k++){
+        tmp_1 = A[str_1][k];
+        tmp_2 = A[str_2][k];
+        A[str_1][k] = tmp_2;
+        A[str_2][k] = tmp_1;
+    }
+
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            std:: cout << A[i][j] << " ";
+        }
+        std:: cout << std:: endl;
+    }
+
+    for(int i = 0; i < size; i++){
+        delete[] A[i];
+    }
+    delete[] A;
+}
+// Задана квадратная матрица порядка N.
+// Нужно поменять местами строку с заданным номером M (0 <= M < N) со строкой с максимальным элементом на главной диагонали
